@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Paint Color Pro</title>
+<meta name="description" content="Explore, analyse and match paint colours from real brand charts — offline, on your phone.">
+<style>
+  :root {
+    --navy: #091F44;
+    --ink: #1c2333;
+    --paper: #f7f5f1;
+    --muted: #5c6478;
+    --card: #ffffff;
+    --radius: 14px;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root { --ink: #e8eaf2; --paper: #0d1526; --muted: #9aa3b8; --card: #16203a; }
+  }
+  * { box-sizing: border-box; margin: 0; }
+  body { font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; background: var(--paper); color: var(--ink); line-height: 1.6; }
+  .wrap { max-width: 880px; margin: 0 auto; padding: 0 24px; }
+  header { padding: 72px 0 40px; text-align: center; }
+  h1 { font-size: clamp(2.2rem, 6vw, 3.4rem); letter-spacing: -0.02em; }
+  .tagline { color: var(--muted); font-size: 1.15rem; margin-top: 10px; }
+  .chips { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; margin: 36px 0 8px; }
+  .chip { width: 68px; height: 92px; border-radius: 10px; display: flex; align-items: flex-end; padding: 6px;
+          box-shadow: 0 4px 14px rgba(9,31,68,.18); transform: rotate(var(--tilt, 0deg)); transition: transform .15s; }
+  .chip:hover { transform: rotate(0deg) translateY(-4px); }
+  .chip span { font-size: .52rem; color: rgba(255,255,255,.92); text-shadow: 0 1px 2px rgba(0,0,0,.4); line-height: 1.2; }
+  .badges { margin: 40px 0 8px; display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+  .badge { border: 1.5px solid var(--muted); color: var(--muted); border-radius: 999px; padding: 10px 22px; font-weight: 600; font-size: .95rem; }
+  .badges .note { width: 100%; text-align: center; color: var(--muted); font-size: .85rem; }
+  section.features { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 18px; padding: 44px 0; }
+  .card { background: var(--card); border-radius: var(--radius); padding: 22px; box-shadow: 0 2px 10px rgba(9,31,68,.08); }
+  .card h3 { font-size: 1.05rem; margin-bottom: 6px; }
+  .card p { color: var(--muted); font-size: .95rem; }
+  .card .dot { width: 34px; height: 34px; border-radius: 9px; margin-bottom: 12px; }
+  footer { padding: 40px 0 56px; text-align: center; color: var(--muted); font-size: .9rem; }
+  footer a { color: inherit; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>Paint Color Pro</h1>
+    <p class="tagline">Explore, analyse and match paint colours from real brand charts — offline, on your phone.</p>
+    <div class="chips">
+      <div class="chip" style="background:#b73b28; --tilt:-3deg"><span>Blanket Orange</span></div>
+      <div class="chip" style="background:#a26336; --tilt:2deg"><span>Hot Ginger</span></div>
+      <div class="chip" style="background:#c2a44b; --tilt:-2deg"><span>Yellowstone</span></div>
+      <div class="chip" style="background:#7c9c58; --tilt:3deg"><span>Leek</span></div>
+      <div class="chip" style="background:#7bc8af; --tilt:-1deg"><span>Meridian Star</span></div>
+      <div class="chip" style="background:#6cbee7; --tilt:2deg"><span>Norfolk Sky</span></div>
+      <div class="chip" style="background:#6871a1; --tilt:-3deg"><span>Imperial Blue</span></div>
+      <div class="chip" style="background:#6f5a8d; --tilt:1deg"><span>Emperor Jewel</span></div>
+      <div class="chip" style="background:#9d64a1; --tilt:-2deg"><span>Oriental Rose</span></div>
+      <div class="chip" style="background:#aa4365; --tilt:3deg"><span>Mysterious Pink</span></div>
+    </div>
+    <div class="badges">
+      <span class="badge">Google Play — beta coming soon</span>
+      <span class="badge">TestFlight — beta coming soon</span>
+      <span class="note">Links will appear here when the first beta ships.</span>
+    </div>
+  </header>
+
+  <section class="features">
+    <div class="card"><div class="dot" style="background:#b73b28"></div>
+      <h3>Real brand charts, offline</h3>
+      <p>Thousands of paint colours from real manufacturer charts, bundled on-device. No network needed to browse, search or filter by hue.</p></div>
+    <div class="card"><div class="dot" style="background:#6871a1"></div>
+      <h3>Colour science that's honest</h3>
+      <p>Matching uses CIEDE2000 — the industry-standard perceptual colour difference — not naive RGB distance. Verified against published reference data.</p></div>
+    <div class="card"><div class="dot" style="background:#7c9c58"></div>
+      <h3>Match from a photo</h3>
+      <p>Snap a wall, a fabric, a sunset. The app extracts its palette and finds the closest real paints for every swatch.</p></div>
+    <div class="card"><div class="dot" style="background:#c2a44b"></div>
+      <h3>Schemes &amp; accessibility</h3>
+      <p>Complementary, analogous, triads and more for any colour — plus WCAG contrast ratings so your colour choices stay readable.</p></div>
+  </section>
+
+  <footer>
+    <p>Support: <a href="mailto:brushworth@bitbot.com.au">brushworth@bitbot.com.au</a> · <a href="privacy.html">Privacy policy</a></p>
+    <p>© 2026 Brad Rushworth. Paint brand names are the property of their respective owners; colour data is used for reference only.</p>
+  </footer>
+</div>
+</body>
+</html>
