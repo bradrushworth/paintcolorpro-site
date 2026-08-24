@@ -1,0 +1,12 @@
+{
+  "name": "Paint Color Pro",
+  "short_name": "Paint Color Pro",
+  "description": "Explore, analyse and match paint colours from real brand charts.",
+  "start_url": "/",
+  "theme_color": "#091F44",
+  "background_color": "#091F44",
+  "icons": [
+    { "src": "/icon-192.png", "type": "image/png", "sizes": "192x192" },
+    { "src": "/icon-512.png", "type": "image/png", "sizes": "512x512" }
+  ]
+}
