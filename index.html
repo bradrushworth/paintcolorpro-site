@@ -10,7 +10,7 @@
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="manifest" href="/site.webmanifest">
 <meta name="theme-color" content="#091F44">
-<meta name="description" content="Explore, analyse and match paint colours from real brand charts — offline, on your phone.">
+<meta name="description" content="Pick a paint colour you love and see what to pair it with. Real Dulux, Taubmans, British Paints and Colorbond charts, colour schemes with plain-language reasons, projects, photo matching — all offline, on your phone.">
 <style>
   :root {
     --navy: #091F44;
@@ -30,22 +30,30 @@
   header { padding: 72px 0 40px; text-align: center; }
   h1 { font-size: clamp(2.2rem, 6vw, 3.4rem); letter-spacing: -0.02em; }
   .tagline { color: var(--muted); font-size: 1.15rem; margin-top: 10px; }
-  .chips { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; margin: 36px 0 8px; }
-  .chip { width: 68px; height: 92px; border-radius: 10px; display: flex; align-items: flex-end; padding: 6px;
-          box-shadow: 0 4px 14px rgba(9,31,68,.18); transform: rotate(var(--tilt, 0deg)); transition: transform .15s; }
-  .chip:hover { transform: rotate(0deg) translateY(-4px); }
-  .chip span { font-size: .52rem; color: rgba(255,255,255,.92); text-shadow: 0 1px 2px rgba(0,0,0,.4); line-height: 1.2; }
+  .scheme { display: flex; max-width: 640px; height: 132px; margin: 36px auto 10px; border-radius: 12px; overflow: hidden;
+            box-shadow: 0 6px 20px rgba(9,31,68,.2); }
+  .scheme div { display: flex; flex-direction: column; justify-content: flex-end; padding: 8px 10px; }
+  .scheme b, .scheme span { font-size: .72rem; line-height: 1.25; color: #1c2333; }
+  .scheme b { font-weight: 700; }
+  .scheme .walls { flex: 55; }
+  .scheme .trim { flex: 14; }
+  .scheme .ceiling { flex: 20; }
+  .scheme .feature { flex: 11; }
+  .scheme .feature b, .scheme .feature span { color: #fff; text-shadow: 0 1px 2px rgba(0,0,0,.4); }
+  .reason { max-width: 640px; margin: 0 auto; color: var(--muted); font-size: .95rem; }
   .badges { margin: 40px 0 8px; display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
   .badge { border: 1.5px solid var(--muted); color: var(--muted); border-radius: 999px; padding: 10px 22px; font-weight: 600; font-size: .95rem; }
   .badges .note { width: 100%; text-align: center; color: var(--muted); font-size: .85rem; }
   a.badge { text-decoration: none; }
   a.badge.badge-live { background: var(--navy); border-color: var(--navy); color: #fff; }
   a.badge.badge-live:hover, a.badge.badge-live:focus-visible { opacity: .85; }
-  section.features { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 18px; padding: 44px 0; }
+  section.features { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 18px; padding: 44px 0 20px; }
   .card { background: var(--card); border-radius: var(--radius); padding: 22px; box-shadow: 0 2px 10px rgba(9,31,68,.08); }
   .card h3 { font-size: 1.05rem; margin-bottom: 6px; }
   .card p { color: var(--muted); font-size: .95rem; }
   .card .dot { width: 34px; height: 34px; border-radius: 9px; margin-bottom: 12px; }
+  section.brands { padding: 12px 0 40px; text-align: center; color: var(--muted); font-size: .95rem; }
+  section.brands strong { color: var(--ink); }
   footer { padding: 40px 0 56px; text-align: center; color: var(--muted); font-size: .9rem; }
   footer a { color: inherit; }
 </style>
@@ -54,45 +62,52 @@
 <div class="wrap">
   <header>
     <h1>Paint Color Pro</h1>
-    <p class="tagline">Explore, analyse and match paint colours from real brand charts — offline, on your phone.</p>
-    <div class="chips">
-      <div class="chip" style="background:#b73b28; --tilt:-3deg"><span>Blanket Orange</span></div>
-      <div class="chip" style="background:#a26336; --tilt:2deg"><span>Hot Ginger</span></div>
-      <div class="chip" style="background:#c2a44b; --tilt:-2deg"><span>Yellowstone</span></div>
-      <div class="chip" style="background:#7c9c58; --tilt:3deg"><span>Leek</span></div>
-      <div class="chip" style="background:#7bc8af; --tilt:-1deg"><span>Meridian Star</span></div>
-      <div class="chip" style="background:#6cbee7; --tilt:2deg"><span>Norfolk Sky</span></div>
-      <div class="chip" style="background:#6871a1; --tilt:-3deg"><span>Imperial Blue</span></div>
-      <div class="chip" style="background:#6f5a8d; --tilt:1deg"><span>Emperor Jewel</span></div>
-      <div class="chip" style="background:#9d64a1; --tilt:-2deg"><span>Oriental Rose</span></div>
-      <div class="chip" style="background:#aa4365; --tilt:3deg"><span>Mysterious Pink</span></div>
+    <p class="tagline">Pick a colour you love. See what to pair it with — from real brand charts, offline, on your phone.</p>
+    <div class="scheme" aria-label="Example scheme: White Beach Quarter walls, Southern Alps trim, Summer Cloud Quarter ceiling, Hot Ginger feature">
+      <div class="walls" style="background:#e8e2d6"><b>Walls</b><span>White Beach Quarter</span></div>
+      <div class="trim" style="background:#f7f8f4"><b>Trim</b><span>Southern Alps</span></div>
+      <div class="ceiling" style="background:#f0efed"><b>Ceiling</b><span>Summer Cloud Quarter</span></div>
+      <div class="feature" style="background:#a26336"><b>Feature</b><span>Hot Ginger</span></div>
     </div>
+    <p class="reason">“Trim is a touch lighter than the walls and stays neutral against their warm undertone.”</p>
     <div class="badges">
       <a class="badge badge-live"
          href="https://play.google.com/store/apps/details?id=au.com.bitbot.paintcolorpro">Get it on Google Play</a>
       <a class="badge badge-live"
          href="https://apps.apple.com/au/app/id6804378014">Download on the App Store</a>
+      <p class="note">New in 2.3: colour schemes for any hero colour, projects with surfaces, taste training, and the full Taubmans, British Paints and Colorbond ranges.</p>
     </div>
   </header>
 
   <section class="features">
+    <div class="card"><div class="dot" style="background:#a26336"></div>
+      <h3>Schemes for the colour you chose</h3>
+      <p>Start from a colour you already love. The app builds walls, trim, ceiling and feature schemes around it, ranks them, and tells you in plain language why each one works. Every suggestion is a real tin you can buy.</p></div>
+    <div class="card"><div class="dot" style="background:#6871a1"></div>
+      <h3>Projects that remember your decisions</h3>
+      <p>Set up a room or an exterior, lock the surfaces you have decided, and let the rest follow. A fixed brick, roof or Colorbond colour shapes what gets suggested.</p></div>
+    <div class="card"><div class="dot" style="background:#7c9c58"></div>
+      <h3>Suggestions that learn your taste</h3>
+      <p>A short swipe-through of real schemes teaches the app what you like — warm or cool, tonal or bold — and ranks suggestions your way. Everything stays on your phone.</p></div>
     <div class="card"><div class="dot" style="background:#b73b28"></div>
       <h3>Real brand charts, offline</h3>
-      <p>Thousands of paint colours from real manufacturer charts, bundled on-device. No network needed to browse, search or filter by hue.</p></div>
-    <div class="card"><div class="dot" style="background:#6871a1"></div>
-      <h3>Colour science that's honest</h3>
-      <p>Matching uses CIEDE2000 — the industry-standard perceptual colour difference — not naive RGB distance. Verified against published reference data.</p></div>
-    <div class="card"><div class="dot" style="background:#7c9c58"></div>
+      <p>Around 13,900 colours from Dulux, Taubmans, British Paints and Colorbond, bundled on-device. Browse, search and filter by hue with no network at all.</p></div>
+    <div class="card"><div class="dot" style="background:#6cbee7"></div>
       <h3>Match from a photo</h3>
-      <p>Snap a wall, a fabric, a sunset. The app extracts its palette and finds the closest real paints for every swatch.</p></div>
+      <p>Snap a wall, a fabric, a sunset. The app extracts its palette and finds the closest real paints for every swatch, and lets you take any of them into a project.</p></div>
     <div class="card"><div class="dot" style="background:#c2a44b"></div>
-      <h3>Schemes &amp; accessibility</h3>
-      <p>Complementary, analogous, triads and more for any colour — plus WCAG contrast ratings so your colour choices stay readable.</p></div>
+      <h3>Colour science that's honest</h3>
+      <p>Matching uses CIEDE2000, the industry-standard perceptual colour difference. Light reflectance and WCAG contrast are shown for every colour, scheme reasons name the undertones at play, and Pro mode shows the numbers behind them.</p></div>
+  </section>
+
+  <section class="brands">
+    <p><strong>Dulux</strong> · <strong>Taubmans</strong> · <strong>British Paints</strong> · <strong>Colorbond</strong><br>
+    Australian charts today. Colour values are the manufacturers' published facts; the app stores no imagery or marketing copy.</p>
   </section>
 
   <footer>
     <p>Support: <a href="mailto:bitbot@bitbot.com.au">bitbot@bitbot.com.au</a> · <a href="privacy.html">Privacy policy</a></p>
-    <p>© 2026 BitBot Software Pty Ltd. Paint brand names are the property of their respective owners; colour data is used for reference only.</p>
+    <p>© 2026 BitBot Software Pty Ltd. Paint brand names are the property of their respective owners; colour data is used for reference only. Colours on screen are a guide — always check a sample pot in your own light.</p>
   </footer>
 </div>
 </body>
