@@ -19,7 +19,12 @@
   <meta charset="UTF-8">
   <meta content="IE=Edge" http-equiv="X-UA-Compatible">
   <meta name="description" content="Pick a colour you love and see what to pair it with.">
-  <meta name="theme-color" content="#0B1F45">
+  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#121318">
+  <meta name="theme-color" media="(prefers-color-scheme: light)" content="#FAF9FF">
+  <style>
+    html, body { background: #FAF9FF; }
+    @media (prefers-color-scheme: dark) { html, body { background: #121318; } }
+  </style>
 
   <!-- iOS meta tags & icons -->
   <meta name="mobile-web-app-capable" content="yes">
