@@ -1,0 +1,42 @@
+[
+  {
+    "id": "dulux-au",
+    "name": "Dulux (ANZ)",
+    "market": "AU",
+    "kind": "paint",
+    "source": "https://github.com/shanmoorthy/dulux-paint-colour-data",
+    "fetched": "2026-08-22"
+  },
+  {
+    "id": "taubmans-au",
+    "name": "Taubmans",
+    "market": "AU",
+    "kind": "paint",
+    "source": "https://www.taubmans.com.au/paint-colours",
+    "fetched": "2026-09-06"
+  },
+  {
+    "id": "brick-au",
+    "name": "Brick",
+    "market": "AU",
+    "kind": "fixedElement",
+    "source": "legacy 2019 fixture (lib/colors/tests/BrickColors.dart)",
+    "fetched": "2019-07-13"
+  },
+  {
+    "id": "colorbond-au",
+    "name": "Colorbond",
+    "market": "AU",
+    "kind": "fixedElement",
+    "source": "https://steelselect.com.au/colours",
+    "fetched": "2026-09-06"
+  },
+  {
+    "id": "british-paints-au",
+    "name": "British Paints",
+    "market": "AU",
+    "kind": "paint",
+    "source": "https://www.britishpaints.com.au/colours/colour-chart/",
+    "fetched": "2026-09-06"
+  }
+]

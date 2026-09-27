@@ -1,0 +1,20 @@
+{
+  "schema": 1,
+  "names": "color_names.json",
+  "packs": [
+    {
+      "market": "AU",
+      "brands": [
+        "dulux-au",
+        "taubmans-au",
+        "brick-au",
+        "colorbond-au",
+        "british-paints-au"
+      ],
+      "schemes": [
+        "schemes/colorbond-au.json",
+        "schemes/dulux-au.json"
+      ]
+    }
+  ]
+}

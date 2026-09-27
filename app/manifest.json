@@ -1,0 +1,35 @@
+{
+    "name": "Paint Color Pro",
+    "short_name": "Paint Color Pro",
+    "start_url": ".",
+    "display": "standalone",
+    "background_color": "#0B1F45",
+    "theme_color": "#0B1F45",
+    "description": "Pick a colour you love and see what to pair it with.",
+    "orientation": "portrait-primary",
+    "prefer_related_applications": false,
+    "icons": [
+        {
+            "src": "icons/Icon-192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "icons/Icon-512.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        },
+        {
+            "src": "icons/Icon-maskable-192.png",
+            "sizes": "192x192",
+            "type": "image/png",
+            "purpose": "maskable"
+        },
+        {
+            "src": "icons/Icon-maskable-512.png",
+            "sizes": "512x512",
+            "type": "image/png",
+            "purpose": "maskable"
+        }
+    ]
+}
